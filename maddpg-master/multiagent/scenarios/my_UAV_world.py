@@ -112,7 +112,7 @@ class Scenario(BaseScenario):
     def observation(self, agent, world):
         # get positions of all entities in this agent's reference frame
         entity_pos_temp = []
-        min_observable_landmark = np.min([3, len(world.landmarks)])
+        min_observable_landmark = np.min([4, len(world.landmarks)])
         for entity in world.landmarks:  # world.entities:
             distance = np.sqrt(np.sum(np.square([entity.state.p_pos - agent.state.p_pos])))
             if distance < world.observing_range and (not entity == world.landmarks[-1]):
